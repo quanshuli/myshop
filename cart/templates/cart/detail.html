@@ -24,11 +24,11 @@
                     <tr>
                         <td>
                             <a href='{{ product.get_absolute_url }}'>
-                                <img src={% if product.image %}
+                                <img src="{% if product.image %}
                                             {{ product.image.url }}
                                          {% else %}
                                             {% static 'img/no_image.png' %}
-                                         {% endif %}>
+                                         {% endif %}">
                             </a>
                         </td>
                         <td>{{ product.name }}</td>
