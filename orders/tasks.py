@@ -1,8 +1,10 @@
-from celery import task 
+from celery import Celery
 from django.core.mail import send_mail
 from .models import Order 
 
-@task
+app = Celery()
+
+@app.task
 def order_created(order_id):
     order = Order.objects.get(id=order_id)
     subject = f'Order nr. {order.id}'
